@@ -1,0 +1,2 @@
+# Indian-Vulture-Population-Genomics-ddRAD-data-processing-and-analysis-
+Analysis code for ddRAD sequencing of Indian vultures (15 samples). This repository contains ordered bash pipeline for preprocessing, joint genotyping and population genetic analyses, R scripts for population-genetic summaries and plotting, Python helpers for allele polarization/dadi, and an environment.yml for reproducibility
