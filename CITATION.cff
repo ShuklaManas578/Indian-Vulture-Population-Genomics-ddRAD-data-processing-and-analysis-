@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use these analysis scripts, please cite them."
+title: "Indian Vulture Population Genomics (ddRAD-data processing and analysis)"
+version: "v1.0"
+authors:
+  - family-names: "Shukla"
+    given-names: "Manas"
+date-released: "2026-01-22"
+url: "https://github.com/ShuklaManas578/Indian-Vulture-Population-Genomics-ddRAD-data-processing-and-analysis-"
+doi: "https://doi.org/10.5281/zenodo.18331891"
