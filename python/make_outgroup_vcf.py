@@ -2,7 +2,7 @@
 # 13 Making outgroup vcf usinf peregrin falcon assembly
 
 """
-make_outgroup_vcf_fixed2.py
+make_outgroup_vcf.py
 
 Robust SAM -> single-sample outgroup VCF generator.
 
@@ -104,7 +104,6 @@ def qidx_to_refpos(cigar, ref_start1, qlen, qidx1):
                     q_to_r[qpos] = None
                 qpos += 1
         else:
-            # H,P etc ignore
             pass
 
     # if exact qidx maps:
@@ -167,12 +166,12 @@ def write_out_vcf(out_vcf, header_meta, sites, qname_map, best_map, out_fa, min_
     total = 0
     found_map = 0
 
-    # regex to extract chrom and pos from query names
+  
     qname_extract = re.compile(r'^([^_:\|]+)[_:\|](\d+)')
 
     with open(out_vcf,'w') as out:
         meta_lines = header_meta.rstrip('\n').split('\n')
-        # clean any existing #CHROM line to avoid duplication
+        
         meta_lines = [l for l in meta_lines if not l.startswith("#CHROM")]
         # add OG_BASE INFO if missing
         if not any(l.startswith('##INFO=<ID=OG_BASE') for l in meta_lines):
@@ -201,7 +200,7 @@ def write_out_vcf(out_vcf, header_meta, sites, qname_map, best_map, out_fa, min_
 
             if best_aln is None:
                 # try to find SAM qname that encodes chrom and pos in other formats
-                # search best_map keys for those matching pattern
+               
                 for q in best_map.keys():
                     m = qname_extract.match(q)
                     if not m: continue
