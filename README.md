@@ -1,4 +1,4 @@
-# Indian-Vulture-Population-Genomics-ddRAD-data-processing-and-analysis-
+# Indian Vulture Population Genomics (ddRADseq data processing and analysis)
 Analysis code for ddRAD sequencing of Indian vultures (15 samples). This repository contains ordered bash pipeline for preprocessing, joint genotyping and population genetic analyses, R scripts for population-genetic summaries and plotting, Python helpers for allele polarization/dadi, and an environment.yml for reproducibility
 
 
@@ -7,6 +7,9 @@ Analysis code for ddRAD sequencing of Indian vultures (15 samples). This reposit
 ## Overview of scripts
 
 > NOTE: filenames are shown as in this repository (numeric prefixes to indicate recommended execution order).
+> 
+> 
+
 
 ### `scripts/bash/` — pipeline & QC (batch / cluster scripts)
 These scripts implement the main preprocessing, mapping, variant calling, population-level VCF preparation and population genetic meteric estimation steps.
@@ -97,3 +100,6 @@ These scripts generate the figures used in the manuscript (PCA, FST heatmaps, he
    ```bash
    conda env create -f environment.yml
    conda activate vulture_analysis
+
+
+Zenodo. DOI: https://doi.org/10.5281/zenodo.18331891
