@@ -1,0 +1,65 @@
+# environment.yml
+# Conda environment for reproducing the ddRAD analysis
+# Create with: conda env create -f environment.yml
+name: vulture_analysis
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  # core languages
+  - python=3.10
+  - pip
+  - r-base=4.4
+
+  # command-line/popgen tools (best-effort names via bioconda/conda-forge)
+  - bwa
+  - samtools
+  - bcftools
+  - vcftools
+  - bedtools
+  - fastp
+  - htslib
+  - gatk
+  - picard
+  - plink           # PLINK 1.9
+  - plink2          # PLINK 2.0 (if available)
+  - angsd
+  - sambamba
+  - snakemake       # optional, if you use any Snakefiles
+  # Note: 'admixture' may not be available on conda-forge/bioconda for all OSes.
+  # If conda cannot install admixture, install it manually (system package or compile).
+  - admixture
+
+  # R packages (conda packaging available for many; others may require install.packages())
+  - r-essentials
+  - r-ggplot2
+  - r-dplyr
+  - r-tidyr
+  - r-readr
+  - r-data.table
+  - r-cowplot
+  - r-patchwork
+  - r-adegenet
+  - r-pegas
+  - r-hierfstat
+  - r-igraph
+  - r-reshape2
+
+  # Python packages installed via pip (listed under pip)
+  - pip:
+    - numpy
+    - pandas
+    - matplotlib
+    - seaborn
+    - scikit-allel
+    - cyvcf2
+    - dadi
+
+# Notes:
+# - If any conda install fails for a package (especially 'admixture' or some R packages),
+#   install them manually or via CRAN/Bioconductor:
+#     R: install.packages("pkg") or BiocManager::install("pkg")
+# - After creating environment, install remaining R deps with:
+#     Rscript install_R_packages.R
